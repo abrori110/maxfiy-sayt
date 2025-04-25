@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Video uchun parol kerak</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Videoni ko‘rish uchun parol kiriting:</h2>
+    <input type="password" id="password" placeholder="Parol">
+    <button onclick="checkPassword()">Kirish</button>
+    <div id="error"></div>
+
+    <script>
+        function checkPassword() {
+            var correctPassword = "4444"; // bu yerga o'zingiz xohlagan parolni yozing
+            var userPassword = document.getElementById("password").value;
+
+            if (userPassword === correctPassword) {
+                // Bu yerga Yandex Diskdagi video havolasini yozing:
+                window.location.href = "https://drive.google.com/file/d/1D9nZEKk-FdPEMCMs59EAb6m8JtgryBnf/view?usp=sharing";
+            } else {
+                document.getElementById("error").innerText = "Noto‘g‘ri parol. Iltimos, yana urinib ko‘ring.";
+            }
+        }
+    </script>
+</body>
+</html>
